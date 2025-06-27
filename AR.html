@@ -1,36 +1,33 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
+
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: https://cdn.glitch.global/0f2926c2-aa7a-41a3-aab1-af497403c52d/targets.mind?v=1744275505645;"
+      mindar-image="imageTargetSrc: targets.mind"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
+      embedded
     >
       <a-assets>
-        <a-asset-item
-          id="pc"
-          src="cornicello.glb"
-        ></a-asset-item>
+        <a-asset-item id="pc" src="cornicello.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
         <a-gltf-model
-          rotation="90 0 0 "
-          position="0 0 0"
-          scale="0.5 0.5 0.5"
           src="#pc"
+          position="0 0 0"
+          rotation="90 0 0"
+          scale="0.5 0.5 0.5"
           animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-        >
-        </a-gltf-model>
+        ></a-gltf-model>
       </a-entity>
     </a-scene>
   </body>
