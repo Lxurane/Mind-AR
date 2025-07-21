@@ -1,0 +1,89 @@
+/* Style global */
+body {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body.home {
+  background: url('stars.gif') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.main-btn {
+  background-color: #f4a42c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 2rem auto;
+  display: block;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+body.scanner {
+  background: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.globe-icon {
+  font-size: 1.5rem;
+}
+
+
+.camera-box {
+  border: 2px solid #2e008b;
+  border-radius: 12px;
+  margin: 1rem;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scan-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border: 2px solid #2e008b;
+  border-radius: 50%;
+}

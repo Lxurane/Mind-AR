@@ -3,10 +3,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
   </head>
 
   <body>
     
+  <img style="width: 100%; height: 100%" src="https://placehold.co/60x60" />
+<img style="width: 100%; height: 100%" src="Intro_Site.mp4" />
+    <div data-property-1="Default" style="width: 100%; height: 100%; padding-left: 50px; padding-right: 50px; padding-top: 31px; padding-bottom: 31px; background: #F2B544; border-radius: 16px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+<div style="text-align: center; justify-content: center; display: flex; flex-direction: column; color: #F5F5F5; font-size: 35px; font-family: Poppins; font-weight: 600; line-height: 20px; word-wrap: break-word">Remémorer</div>
+</div>
+
         <a-scene
       mindar-image="imageTargetSrc: targets.mind"
       color-space="sRGB"
@@ -31,5 +40,20 @@
         ></a-gltf-model>
       </a-entity>
     </a-scene>
+      <main>
+    <button class="main-btn">Remémorer</button>
+    <div class="camera-box">
+      <video id="camera" autoplay></video>
+      <div class="scan-button"></div>
+    </div>
+  </main>
+
+    
+    
+ 
+
+  
   </body>
 </html>
+
+
