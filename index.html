@@ -12,36 +12,10 @@
     <!-- 🎥 Vidéo en fond -->
     <video id="background-video" autoplay muted loop playsinline>
       <source src="Intro_Site.mp4" type="video/mp4" />
-      Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
 
     <!-- 🔘 Bouton centré en bas -->
     <button class="rememorer-btn" onclick="location.href='page-de-detection.html'">Remémorer</button>
-
-    <!-- 🌐 AR Scene existante -->
-    <a-scene
-      mindar-image="imageTargetSrc: targets.mind"
-      color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
-      vr-mode-ui="enabled: false"
-      device-orientation-permission-ui="enabled: false"
-    >
-      <a-assets>
-        <a-asset-item id="pc" src="cornicello.glb"></a-asset-item>
-      </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-
-      <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model
-          src="#pc"
-          position="0 0 0"
-          rotation="90 0 0"
-          scale="2.25 2.25 2.25"
-          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-        ></a-gltf-model>
-      </a-entity>
-    </a-scene>
 
     <!-- ✅ Contenu non modifié -->
     <main>
