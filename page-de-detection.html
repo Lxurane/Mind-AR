@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page de détection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- MindAR + A-Frame -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+    <!-- Style de base -->
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #ar-scene {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      .loading-message {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 18px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        z-index: 10;
+      }
+    </style>
+  </head>
+
+  <body class="scanner">
+    <!-- Message de chargement -->
+    <div class="loading-message">📷 Scan de l’image en cours...</div>
+
+    <!-- Scène AR avec MindAR -->
+    <a-scene
+      id="ar-scene"
+      mindar-image="imageTargetSrc: targets.mind; autoStart: true; uiScanning: true;"
+      embedded
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <!-- 📦 Ressources -->
+      <a-assets>
+        <a-asset-item id="pc" src="cornicello.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- 🎥 Caméra -->
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- 🧠 Détection de la cible -->
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          src="#pc"
+          position="0 0 0"
+          rotation="90 0 0"
+          scale="2.25 2.25 2.25"
+          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+        ></a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
